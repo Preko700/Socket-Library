@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SocketLib.Interfaces
+﻿namespace SocketLib.Interfaces
 {
     // Defines the contract for socket logging
     public interface ISocketLogger

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SocketLib.Configuration
+﻿namespace SocketLib.Configuration
 {
     // Policy for retrying failed operations
     public class RetryPolicy

@@ -1,5 +1,4 @@
-﻿using System;
-using SocketLib.Interfaces;
+﻿using SocketLib.Interfaces;
 
 namespace SocketLib.Helpers
 {

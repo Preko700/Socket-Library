@@ -1,12 +1,8 @@
-﻿using System;
-using System.Net;
+﻿using SocketLib.Configuration;
+using SocketLib.Exceptions;
+using SocketLib.Interfaces;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using SocketLib.Configuration;
-using SocketLib.Interfaces;
-using SocketLib.Exceptions;
 
 namespace SocketLib.Implementation
 {
@@ -349,7 +345,8 @@ namespace SocketLib.Implementation
 
         private void StartReconnectMonitor()
         {
-            Task.Run(async () => {
+            Task.Run(async () =>
+            {
                 while (!_reconnectCts.IsCancellationRequested)
                 {
                     await Task.Delay(1000, _reconnectCts.Token).ConfigureAwait(false);

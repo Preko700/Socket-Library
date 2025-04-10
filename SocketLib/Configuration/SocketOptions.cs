@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SocketLib.Configuration
+﻿namespace SocketLib.Configuration
 {
     // Configuration options for socket operations
     public class SocketOptions

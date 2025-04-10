@@ -1,13 +1,9 @@
-﻿using System;
+﻿using SocketLib.Configuration;
+using SocketLib.Exceptions;
+using SocketLib.Interfaces;
 using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using SocketLib.Configuration;
-using SocketLib.Interfaces;
-using SocketLib.Exceptions;
 
 namespace SocketLib.Implementation
 {
@@ -216,7 +212,7 @@ namespace SocketLib.Implementation
                             _logger?.Debug($"Sent {response.Length} bytes to {remoteEndPoint}");
                         }
                     }
-                    catch (Exception ex) when (ex is SocketException || ex is IOException || ex is ObjectDisposedException)
+                    catch (Exception ex) when (ex is System.Net.Sockets.SocketException || ex is IOException || ex is ObjectDisposedException)
                     {
                         _logger?.Warning($"Client connection error: {ex.Message}");
                         break;

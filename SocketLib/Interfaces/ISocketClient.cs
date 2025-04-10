@@ -1,8 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace SocketLib.Interfaces
+﻿namespace SocketLib.Interfaces
 {
 
     // Defines the contract for a socket client

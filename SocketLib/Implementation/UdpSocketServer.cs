@@ -1,13 +1,9 @@
-﻿using System;
+﻿using SocketLib.Configuration;
+using SocketLib.Exceptions;
+using SocketLib.Interfaces;
 using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using SocketLib.Configuration;
-using SocketLib.Interfaces;
-using SocketLib.Exceptions;
 
 namespace SocketLib.Implementation
 {
@@ -145,7 +141,8 @@ namespace SocketLib.Implementation
                     }
 
                     // Process the message in a separate task to not block the receive loop
-                    _ = Task.Run(async () => {
+                    _ = Task.Run(async () =>
+                    {
                         try
                         {
                             // Extract message from framed data
@@ -194,7 +191,7 @@ namespace SocketLib.Implementation
                         }
                     }, cancellationToken);
                 }
-                catch (SocketException ex) when (ex.SocketErrorCode == SocketError.ConnectionReset)
+                catch (System.Net.Sockets.SocketException ex) when (ex.SocketErrorCode == SocketError.ConnectionReset)
                 {
                     // This happens when a UDP client disconnects abruptly
                     // We can't know which client it was, so we just log it
