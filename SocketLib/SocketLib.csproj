@@ -4,6 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
+    <Title>Socket Library</Title>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Authors>Preko700</Authors>
+    <Product>Socket Library</Product>
+    <Description>Biblioteca genérica de sockets para .NET Core 8</Description>
+    <Copyright>© Preko700 2025</Copyright>
+    <PackageProjectUrl>https://github.com/Preko700/Socket-Library</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
