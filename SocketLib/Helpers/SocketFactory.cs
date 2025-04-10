@@ -23,15 +23,13 @@ namespace SocketLib.Helpers
         // Create a UDP client
         public static ISocketClient CreateUdpClient(SocketOptions options = null, ISocketLogger logger = null)
         {
-            // Implementation would be similar to TcpSocketClient but using UdpClient
-            throw new NotImplementedException("UDP client is not implemented yet");
+            return new UdpSocketClient(options, logger);
         }
 
         // Create a UDP server
         public static ISocketServer CreateUdpServer(SocketOptions options = null, ISocketLogger logger = null)
         {
-            // Implementation would be similar to TcpSocketServer but using UdpClient
-            throw new NotImplementedException("UDP server is not implemented yet");
+            return new UdpSocketServer(options, logger);
         }
     }
 }
